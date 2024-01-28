@@ -1,0 +1,385 @@
+/*
+ハンバーガーメニュー
+メニューが閉じている時は、「left: -300px;」で画面左に隠し、
+「opacity: 0;」で非表示にしている
+*/
+#navi {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    color: #fff;
+    padding: 36px 50px;
+    transition: all 0.5s;
+    z-index: 20;
+    opacity: 0;
+}
+#navi a {
+  color: #fff;
+  text-decoration:none;
+}
+#navi li {
+  margin-bottom: 14px;
+  list-style: none;
+}
+/*
+ハンバーガーメニュー
+メニューが開いている時は、「left: 0;」「opacity: 1;」で
+画面左に表示する
+*/
+.open #navi {
+    left: 0;
+    opacity: 1;
+}
+/*
+ハンバーガーメニューの線の設定（メニューが開いている時）
+線の色を白に変更
+*/
+.open .toggle_btn span {
+    background-color: #fff;
+}
+/*
+1本目の線を-45度回転
+*/
+.open .toggle_btn span:nth-child(1) {
+    -webkit-transform: translateY(4px) rotate(-45deg);
+    transform: translateY(4px) rotate(-45deg);
+}
+  /*
+  2本目の線を45度回転
+*/
+.open .toggle_btn span:nth-child(2) {
+    -webkit-transform: translateY(-4px) rotate(45deg);
+    transform: translateY(-4px) rotate(45deg);
+}
+#mask {
+    display: none;
+    transition: all 0.5s;
+}
+/*
+メニューを開いている時は、全体を黒背景にする
+*/
+.open #mask {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: .8;
+    z-index: 10;
+    cursor: pointer;
+}
+
+
+a:hover {
+    opacity: 0.7;
+}
+a {
+    transition: all 0.5s;
+}
+
+header {
+    height: 80px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    max-width: 1360px;
+    padding: 0px 40px;
+    margin: 0 auto;
+}
+
+header img {
+    width: 180px;
+    height: 25px;
+}
+
+header h1 {
+    width: 180px;
+    line-height: 1px;
+    display: block;
+}
+
+.toggle_btn {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    transition: all 0.5s;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.toggle_btn span {
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background-color: #333;
+    border-radius: 4px;
+    transition: all 0.5s;
+}
+
+.toggle_btn span:nth-child(1) {
+    top: 10px;
+}
+
+.toggle_btn span:nth-child(2) {
+    bottom: 10px;
+}
+
+main {
+    max-width: 1360px;
+    padding: 40px;
+    padding-top: 70px;
+    margin: 0 auto;
+}
+
+body {
+    margin: 0px;
+}
+
+.item-wrap a {
+    /* height: 100%; */
+    display: block;
+    text-decoration: none;
+}
+
+.item-wrap p {
+    margin: 0px 0px 0px 5px;
+    font-size: 12px;
+    color: #333333;
+}
+
+.btn-wrap {
+    text-align: center;
+    margin: 43px 0px;
+}
+.btn-wrap a {
+    text-decoration: none;
+    color: #656565;
+    text-align: center;
+    font-size: 14px;
+}
+
+.pagination-wrap {
+    margin: 43px 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination-wrap a {
+    text-decoration: none;
+    color: #656565;
+    text-align: center;
+    font-size: 14px;
+}
+
+.pagination-wrap li {
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    font-size: 14px;
+}
+
+.pagination {
+    display: flex;
+    list-style: none;
+    padding: 0px;
+    gap: 15px;
+    outline-style: none;
+}
+
+footer p {
+    font-size: 11px;
+    margin: 0px;
+}
+
+footer a {
+    text-decoration: none;
+    color: black;
+    font-size: 11px;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0px 25px 0px 0px;
+    margin: 0px;
+}
+
+footer nav {
+    display: flex;
+    gap: 0px;
+    padding: 0px;
+    height: 24px;
+}
+
+.item-detail-text-wrap dl {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item-detail-text-wrap dt {
+    width: 30%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.item-detail-text-wrap dd {
+    width: 70%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.company-wrap ul {
+    padding: 0px;
+}
+
+.company-wrap iframe {
+    width: 100%;
+    filter: grayscale(100%);
+}
+
+.company-wrap li:last-child {
+    border-bottom: none;
+}
+
+@media screen and (min-width: 401px) {
+    .item-wrap {
+        display: grid;
+        padding: 0px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 9px 16px;
+        list-style: none;
+    }
+    
+    .item-wrap img {
+        width: 100%;
+        min-width: 193px;
+    }
+
+    .item-detail-wrap {
+        display: flex;
+        gap: 60px;
+        width: 951px;
+    }
+
+    .item-detail-text-wrap {
+        width: 385px;
+        font-size: 14px;
+        color: #1e1e1e;
+    }
+
+    .item-detail-wrap img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .about-wrap {
+        width: 684px;
+        font-size: 14px;
+        color: #1e1e1e;
+    }
+
+    .company-wrap {
+        width: 655px;
+        color: #5e5a5a;
+        font-size: 13px;
+    }
+
+    .company-wrap li {
+        list-style: none;
+        display: flex;
+        border-bottom: 1px solid #c6c6c6;
+    }
+
+    .company-text-wrap p:nth-child(1) {
+        width: 35%;
+    }
+
+    .company-text-wrap p:nth-child(2) {
+        width: 65%;
+    }
+
+    footer {
+        display: flex;
+        padding: 20px 40px 15px 40px;
+        justify-content: space-between;
+        height: 26px;
+    }    
+}
+
+@media screen and (max-width: 400px) {
+    .item-wrap {
+        display: grid;
+        padding: 0px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 9px 16px;
+        list-style: none;
+    }
+
+    .item-wrap img {
+        width: 100%;
+        min-width: 139px;
+    }
+
+    .item-detail-wrap {
+        gap: 60px;
+    }
+
+    .item-detail-text-wrap {
+        font-size: 14px;
+        color: #1e1e1e;
+    }
+
+    .item-detail-wrap img {
+        width: 100%;
+    }
+
+    .about-wrap {
+        width: 100%;
+        font-size: 14px;
+        color: #1e1e1e;
+    }
+
+    .company-wrap {
+        width: 100%;
+        color: #5e5a5a;
+        font-size: 13px;
+    }
+
+    .company-wrap li {
+        list-style: none;
+        display: flex;
+        border-bottom: 1px solid #c6c6c6;
+        flex-flow: column;
+    }
+
+    .company-text-wrap p:nth-child(1) {
+        width: 35%;
+        margin: 4px 0px;
+    }
+
+    .company-text-wrap p:nth-child(2) {
+        width: 65%;
+        margin: 4px 0px 11px 0px;
+    }
+
+    footer {
+        display: flex;
+        padding: 20px 40px 34px 40px;
+        height: 26px;
+        flex-flow: column;
+    }
+
+    .nav-menu {
+        padding: 0px;
+    }
+}
