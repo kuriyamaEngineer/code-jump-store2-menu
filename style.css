@@ -142,10 +142,11 @@ main {
 
 body {
     margin: 0px;
+    position: relative;
+    min-height: 100vh;
 }
 
 .item-wrap a {
-    /* height: 100%; */
     display: block;
     text-decoration: none;
 }
@@ -309,9 +310,15 @@ footer nav {
 
     footer {
         display: flex;
-        padding: 20px 40px 15px 40px;
         justify-content: space-between;
-        height: 26px;
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        max-width: 1360px;
+        margin: 0 auto;
+        padding: 0 40px;
     }    
 }
 
